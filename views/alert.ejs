@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt</title>
+<link href="/css/header.css" rel="stylesheet">
+<link href="/css/footer.css" rel="stylesheet">
+<link href="/css/alert.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+</head>
+<body>
+<%- include('./header.ejs') %>
+<div id = "container">
+    <div id = "content">
+        <% if (type == 1) { %>
+        <p>注册成功，欢迎 <%- name%>，正在跳转到个人中心</p>
+        <% } %>
+        <% if (type == 2) { %>
+        <p>注册失败，账号已被占用，请刷新页面后再重新注册</p>
+        <% } %>
+        <% if (type == 3) { %>
+        <p>登陆成功，欢迎 <%- name%>，正在跳转到个人中心</p>
+        <% } %>
+        <% if (type == 4) { %>
+        <p>登陆失败，账号不存在，请刷新页面后再重新注册</p>
+        <% } %> 
+        <% if (type == 5) { %>
+        <p>登陆失败，密码不正确，请刷新页面后再重新登陆</p>
+        <% } %>
+        <% if (type == 6) { %>
+        <p>注销成功，欢迎再次登陆，正在跳转到首页</p>
+        <% } %>
+        <% if (type == 8) { %>
+        <p>当前访问疑似WEB攻击，已被网站管理员拦截并记录访问信息</p>
+            <% if (warnData) { %>
+                <p class="warn">拦截IP地址：<%= warnData.warnip%></p>
+                <p class="warn">拦截时间：<%= warnData.warndate%></p>
+                <p class="warn">客户端特征：<%= warnData.warnagent%></p>
+            <% } %> 
+        <% } %>  
+        <% if (type == 9) { %>
+        <p>暂无权限查看安全日志，正在跳转到首页</p>
+        <% } %>     
+    </div>
+</div>
+<%- include('./footer.ejs') %>
+
+<% if (type == 1 || type == 3) { %>
+    <script type="text/javascript">
+    window.onload = function(){
+        setTimeout(function(){
+            window.location.href="http://localhost:3000/list";
+            //window.location.href="http://lhccloud.cn/list";
+        }, 1000)
+    }
+    </script>  
+<% } %>
+<% if (type == 6 || type == 9) { %>
+    <script type="text/javascript">
+    window.onload = function(){
+        setTimeout(function(){
+            window.location.href="http://localhost:3000/";
+            //window.location.href="http://lhccloud.cn/";
+        }, 1000)
+    }
+    </script>  
+<% } %>
+</body>
+</html>

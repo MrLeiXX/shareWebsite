@@ -1,0 +1,149 @@
+#container{
+    width: 100%;
+    height: 100%;
+    margin-top:100px;
+}
+
+#content{
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+}
+
+#content a{
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+#content-list{
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+#content-list p{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 20px;
+}
+#content-list p:nth-child(1){
+    float: left;
+}
+
+#content-list p:nth-child(2){
+    float: right;
+    background: #0084ff;
+    border-radius: 8px;
+}
+
+#content ul{
+    width: 100%;
+    margin-left: -40px;
+    padding-bottom: 5px;
+}
+
+#content ul li{
+    width: 96%;
+    margin: 20px auto;
+    padding: 5px 0;
+    list-style: none;
+    border: 1px solid #f1f1f1;
+}
+#content ul li p{
+    display: inline-block;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0;
+    text-align: left;
+}
+#content ul li p:nth-child(1){
+    width: 62%;
+}
+#content ul .findTitle{
+    color: #000;
+    font-size: 16px;
+}
+#content ul li p:nth-child(2){
+    width: 25%;
+}
+
+#content ul li p:nth-child(3){
+    width: 8%;
+    background: #0084ff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#content-edit{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.content-edit-hidd{
+    display: none;
+}
+
+#edit-container{
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 80px;
+    text-align: center;
+}
+
+#content-edit .signTitle{
+    padding: 30px 0;
+    font-size: 20px;
+    text-align: center;
+    color: dodgerblue;
+}
+#content-edit  form{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+#content-edit  form span{
+    width: 70px;
+    display: inline-block;
+    color: dodgerblue;
+}
+#content-edit  form span.sp-span{
+    position: relative;
+    top: -130px;
+}
+#content-edit  form .input{
+    width: 60%;
+    height: 30px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+#content-edit  form .textarea{
+    width: 60%;
+    height: 150px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+#content-edit  form .submit{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    color: dodgerblue;
+}

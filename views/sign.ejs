@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign</title>
+<link href="/css/header.css" rel="stylesheet">
+<link href="/css/footer.css" rel="stylesheet">
+<link href="/css/sign.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+</head>
+<body>
+<%- include('./header.ejs') %>
+
+<div id = "container">
+    <div id = "content">
+        <% if ( signType == "land") { %>
+        <div class = "signTitle">登陆</div>
+        <form action="/signIn" method="POST" onsubmit="return userDiscuss()">
+        <% } %>
+        <% if ( signType == "register") { %>
+        <div class = "signTitle">注册</div>
+        <form action="/signUp" method="POST" onsubmit="return userDiscuss()">
+        <% } %>
+            <div>
+                <input type="hidden" name="token" value= <%= tokenVal %> />
+                <span>用户名:</span>
+                <input class="input" required type="text" maxlength="10" placeholder="请输入6-10位混合字母和数字" name="userName" value=""/>
+            </div>
+            <div>
+                <span>密码:</span>
+                <input class="input" required type="password" maxlength="10" placeholder="请输入6-10位混合字母和数字" name="passWord" value=""/>
+            </div>   
+            <div>
+                <input class="submit" type="submit" value="ok">
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('./footer.ejs') %>
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script type="text/javascript">
+    function userDiscuss(){
+        var name = document.forms[0].userName.value;
+        var pwd = document.forms[0].passWord.value;
+        if(name.length < 6 || pwd.length < 6 || !sureRight(name) || !sureRight(pwd)){
+            alert("请确保输入位数为6-10位--混合字母数字类型！");
+            return false;
+        }else{
+            document.forms[0].passWord.value = md5(pwd);
+            return true;
+        }
+    }
+    function sureRight(str){
+        var arr = str.split("");
+        return arr.every(function(item){
+            return /[a-zA-Z0-9]/ig.test(item);
+        });
+    }
+</script>
+</body>
+</html>

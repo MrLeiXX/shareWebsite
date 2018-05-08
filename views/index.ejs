@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Index</title>
+<link href="/css/header.css" rel="stylesheet">
+<link href="/css/footer.css" rel="stylesheet">
+<link href="/css/index.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+</head>
+<body>
+<%- include('./header.ejs') %>
+<div id = "container">
+    <div id = "content">
+        <ul>
+        <% for(var i in shareData){ %>
+            <li>
+                <a href="/detail/<%= shareData[i]._id %>">
+                    <div id = "content-title"><%= shareData[i].title %></div>
+                    <p class="one"><img src="/img/people.png"><%= shareData[i].author %></p>
+                    <p class="two"><img src="/img/time.png"><%= shareData[i].createTime %></p>
+                </a>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+</div>
+
+<%- include('./footer.ejs') %>
+</body>
+</html>

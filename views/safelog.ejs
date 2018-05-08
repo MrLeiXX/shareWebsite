@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe</title>
+<link href="/css/header.css" rel="stylesheet">
+<link href="/css/footer.css" rel="stylesheet">
+<link href="/css/safelog.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+</head>
+<body>
+<%- include('./header.ejs') %>
+<div id = "container">
+    <div id = "content">
+        <div id = "safetitle">安全监控日志</div>
+        <ul>
+        <% for(var k in safedata){ %>
+            <li>
+                <div class="contall">
+                    <p class="cont1"><%= safedata[k].date%></p>
+                    <p class="cont2"><%= safedata[k].ip%></p>
+                    <p class="cont3"><%= safedata[k].userAgent%></p>
+                </div>
+                <div class="contall">
+                        <p class="cont1"><%= safedata[k].method%></p>
+                        <p class="cont2"><%= safedata[k].path%></p>
+                        <p class="cont3"><%= safedata[k].content%></p>
+                </div>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+</div>
+
+<%- include('./footer.ejs') %>
+</body>
+</html>

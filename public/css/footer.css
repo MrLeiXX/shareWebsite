@@ -1,0 +1,15 @@
+#footer{
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #f1f1f1;
+    text-align: center;
+    position: fixed;
+    bottom: 0; 
+}
+#footer > p{
+    color: dodgerblue;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+    margin: 0;
+}

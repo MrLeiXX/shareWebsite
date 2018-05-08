@@ -1,0 +1,44 @@
+#container{
+    width: 100%;
+    height: 100%;
+    margin-top:100px;
+}
+
+#content{
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#content .signTitle{
+    margin: 40px 0;
+    font-size: 30px;
+    text-align: center;
+    color: dodgerblue;
+}
+#content > form{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+#content > form span{
+    width: 70px;
+    display: inline-block;
+}
+#content > form .input{
+    width: 40%;
+    height: 20px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+#content > form .submit{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    color: dodgerblue;
+}
