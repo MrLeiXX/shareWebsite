@@ -33,6 +33,19 @@
     display: inline-block;
     margin-bottom: 40px;
 }
+#content > form #capcode{
+    width: 20%;
+    height: 20px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+#content > form #capimg{
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 81px;
+}
 #content > form .submit{
     display: inline-block;
     width: 100px;

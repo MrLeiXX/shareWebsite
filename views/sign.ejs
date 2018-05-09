@@ -31,6 +31,11 @@
             <div>
                 <span>密码:</span>
                 <input class="input" required type="password" maxlength="10" placeholder="请输入6-10位混合字母和数字" name="passWord" value=""/>
+            </div>
+            <div>
+                <span>验证码:</span>
+                <input id="capcode" class="input" required type="text" placeholder="请输入右侧四位验证码"  maxlength="4" name="capCode" value=""/>
+                <img id="capimg" src="/captcha" rel = "验证码" />
             </div>   
             <div>
                 <input class="submit" type="submit" value="ok">

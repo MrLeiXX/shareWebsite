@@ -49,6 +49,7 @@ app.use(session({
 var indexFunction = require('./routers/index');
 var detailFunction = require('./routers/detail');
 var signFunction = require('./routers/sign');
+var captchaFunction = require('./routers/captchapng');
 var signInFunction = require('./routers/signIn');
 var signUpFunction = require('./routers/signUp');
 var listFunction = require('./routers/list');
@@ -65,6 +66,8 @@ app.get('/detail/:pageId', detailFunction);
 
 //登陆注册页
 app.get('/sign/:type', signFunction);
+
+app.get('/captcha', captchaFunction);
 
 //登陆逻辑
 app.post('/signIn', signInFunction);
