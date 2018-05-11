@@ -13,10 +13,14 @@
 }
 #content > p{
     width:100%;
-    color: dodgerblue;
+    color: tomato;
 }
 
 #content .warn{
-    color: tomato;
+    color: dodgerblue;
     padding: 10px;
+}
+#content img{
+    width: 40px;
+    height: 40px;
 }

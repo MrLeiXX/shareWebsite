@@ -21,7 +21,8 @@ module.exports = function(req, res){
 
                 //对用户名进行web安全验证，防止查询时受到攻击
                 var uname = req.body.userName;
-                var warnMessage = safeDiscuss({sqlTest: uname, xssTest: uname}, req);
+                var pwd = req.body.passWord;
+                var warnMessage = safeDiscuss({nosqlTest: uname+pwd, xssTest: uname}, req);
             
                 if(req.body.passWord.length != 32 || uname.length > 10 || uname.length < 6 || warnMessage){
                     res.render('../views/alert',{name: "", type: 8, uname: "", warnData: warnMessage});
@@ -33,7 +34,7 @@ module.exports = function(req, res){
                     if(docs.length < 1){
             
                         //在数据存入数据库前再次进行加密
-                        var pwd = crypto.createHash('md5').update(req.body.passWord).digest('hex');
+                        pwd = crypto.createHash('md5').update(pwd).digest('hex');
             
                         var newData = new shareContent({name: uname, passWord: pwd});
                         newData.save(function(err, docs){

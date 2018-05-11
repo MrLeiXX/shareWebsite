@@ -33,10 +33,12 @@
         <p>注销成功，欢迎再次登陆，正在跳转到首页</p>
         <% } %>
         <% if (type == 8) { %>
-        <p>当前访问疑似WEB攻击，已被网站管理员拦截并记录访问信息</p>
+        <p><img src="/img/safe.png"/></p>
+        <p>检测到可疑WEB攻击，已记录并反馈如下信息</p>
             <% if (warnData) { %>
                 <p class="warn">拦截IP地址：<%= warnData.warnip%></p>
                 <p class="warn">拦截时间：<%= warnData.warndate%></p>
+                <p class="warn">可疑请求语句：<%= warnData.warncont%></p>
                 <p class="warn">客户端特征：<%= warnData.warnagent%></p>
             <% } %> 
         <% } %>  

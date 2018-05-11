@@ -3,29 +3,32 @@ var safeDiscuss = require("../models/mongooseSafe");
 module.exports = function(reqMessage, req){
     var a = 0, b = 0, c = 0, content = "";
 
-    if(reqMessage.sqlTest){
-        var cont = reqMessage.sqlTest;
-        var re=/select|update|delete|truncate|join|union|exec|insert|drop|count|'|"|;|>|<|%/i;
+    //nosql攻击检测
+    if(reqMessage.nosqlTest){
+        var cont = reqMessage.nosqlTest;
+        var re=/\$|\$eq|\$gt|\$gte|\$lt|\$lte|\$ne|\$in|\$nin|\$or|\$and|\$not|\$nor|\$exists|\$type|\$position|\$sort|\$each|\$push|\$pull|\$pop|\$set|\$re|\$inc|\$elem|\$where|\$mo|'|"|;|\{|\}|\(|\)/i;
         if(re.test(cont)){
             a = 1;
-            content = "疑似SQL注入攻击：" + cont;
+            content += ("疑似noSql注入攻击  " + cont);
         }
     }
 
+    //xss攻击检测
     if(reqMessage.xssTest){
         var cont = reqMessage.xssTest;
         var re=/<script>|<\/script>|<img>|<img\/>|on|<a|alert|confirm|prompt|console/ig;
         if(re.test(cont)){
             b = 1;
-            content = "疑似xss攻击：" + cont;
+            content += ("疑似xss攻击  " + cont);
         }
     }
 
+    //CSRF攻击检测
     if(reqMessage.csrfTest){
         var cont = reqMessage.csrfTest;
         if(cont == 1){
             c = 1;
-            content = "疑似CSRF攻击：无token";
+            content += ("疑似CSRF攻击  无token");
         }
     }
 
@@ -35,7 +38,7 @@ module.exports = function(reqMessage, req){
             ip: req.headers["x-real-ip"],
             path: req.path,
             method: req.method,
-            content: content, //注意：content可能包含xss攻击，需要ejs配合使用
+            content: content,
             userAgent: req.headers["user-agent"]
         };
 
@@ -45,7 +48,7 @@ module.exports = function(reqMessage, req){
                     console.log("the data saved is failed -----------" + err);
             }
         });
-        return {warndate: str.date, warnip: str.ip, warnagent: str.userAgent};
+        return {warndate: str.date, warnip: str.ip, warnagent: str.userAgent, warncont: str.content};
     }
     else {
         return false;

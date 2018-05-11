@@ -9,7 +9,7 @@ module.exports = function(req, res){
     //同时判断session和token值
 
     //---sql攻击检测---csrf（随机数）攻击检测---
-    var warnMessage = safeDiscuss({sqlTest: listId}, req);
+    var warnMessage = safeDiscuss({nosqlTest: listId}, req);
 
     if (!warnMessage){
 

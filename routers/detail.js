@@ -10,7 +10,7 @@ module.exports = function(req, res){
     }
 
     //---sql攻击检测---
-    var warnMessage = safeDiscuss({sqlTest: pageId}, req);
+    var warnMessage = safeDiscuss({nosqlTest: pageId}, req);
 
     if (!warnMessage){
         shareContent.find({"discuss._id": pageId}, {"discuss.$": 1, _id: 0}, function(err, docs){
