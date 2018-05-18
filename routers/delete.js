@@ -23,7 +23,7 @@ module.exports = function(req, res){
                     res.send("{errCode: 502, errText: \"server is fail\"}");
                 }
                 else{
-                    res.redirect('/list');
+                    res.redirect('/new/list');
                 }
             });
         }  

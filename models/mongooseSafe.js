@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var DB_URL = 'mongodb://localhost:27017/discuss';
+var DB_URL = 'mongodb://localhost:27017/newdiscuss';
 mongoose.connect(DB_URL);
 
 var Schema = mongoose.Schema;

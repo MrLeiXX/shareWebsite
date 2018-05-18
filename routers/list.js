@@ -35,6 +35,6 @@ module.exports = function(req, res){
         });
     }
     else{
-        res.redirect('/sign/land');
+        res.redirect('/new/sign/land');
     }
 }

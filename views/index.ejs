@@ -17,7 +17,7 @@
         <ul>
         <% for(var i in shareData){ %>
             <li>
-                <a href="/detail/<%= shareData[i]._id %>">
+                <a href="/new/detail/<%= shareData[i]._id %>">
                     <div id = "content-title"><%= shareData[i].title %></div>
                     <p class="one"><img src="/img/people.png"><%= shareData[i].author %></p>
                     <p class="two"><img src="/img/time.png"><%= shareData[i].createTime %></p>

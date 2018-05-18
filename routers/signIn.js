@@ -48,7 +48,7 @@ module.exports = function(req, res){
                         delete req.session.captchaCode;
     
                         if(uname == "lei12345"){
-                            res.redirect('/safelog');
+                            res.redirect('/new/safelog');
                         }
                         else{
                             res.render('../views/alert',{name: uname, type: 3, uname: uname});
@@ -60,14 +60,14 @@ module.exports = function(req, res){
             }
             else {
                 var warnMessage = safeDiscuss({csrfTest: 1}, req);
-                res.redirect('/sign/land');
+                res.redirect('/new/sign/land');
             }
         }
         else{
-            res.redirect('/sign/land');
+            res.redirect('/new/sign/land');
         }
     }
     else{
-        res.redirect('/');
+        res.redirect('/new');
     }
 }

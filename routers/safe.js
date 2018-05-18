@@ -6,7 +6,7 @@ module.exports = function(reqMessage, req){
     //nosql攻击检测
     if(reqMessage.nosqlTest){
         var cont = reqMessage.nosqlTest;
-        var re=/\$|\$eq|\$gt|\$gte|\$lt|\$lte|\$ne|\$in|\$nin|\$or|\$and|\$not|\$nor|\$exists|\$type|\$position|\$sort|\$each|\$push|\$pull|\$pop|\$set|\$re|\$inc|\$elem|\$where|\$mo|'|"|;|\{|\}|\(|\)/i;
+        var re=/select|update|delete|truncate|join|union|exec|insert|drop|count|\$|\$eq|\$gt|\$gte|\$lt|\$lte|\$ne|\$in|\$nin|\$or|\$and|\$not|\$nor|\$exists|\$type|\$position|\$sort|\$each|\$push|\$pull|\$pop|\$set|\$re|\$inc|\$elem|\$where|\$mo|'|"|;|\{|\}|\(|\)/i;
         if(re.test(cont)){
             a = 1;
             content += ("疑似noSql注入攻击  " + cont);

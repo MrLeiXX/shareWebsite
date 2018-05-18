@@ -57,14 +57,14 @@ module.exports = function(req, res){
             }
             else {
                 var warnMessage = safeDiscuss({csrfTest: 1}, req);
-                res.redirect('/sign/register');
+                res.redirect('/new/sign/register');
             }
         }
         else{
-            res.redirect('/sign/register');
+            res.redirect('/new/sign/register');
         }  
     }
     else{
-        res.redirect('/');
+        res.redirect('/new');
     }
 }

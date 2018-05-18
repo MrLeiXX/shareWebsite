@@ -17,11 +17,11 @@
     <div id = "content">
         <% if ( signType == "land") { %>
         <div class = "signTitle">登陆</div>
-        <form action="/signIn" method="POST" onsubmit="return userDiscuss()">
+        <form action="/new/signIn" method="POST" onsubmit="return userDiscuss()">
         <% } %>
         <% if ( signType == "register") { %>
         <div class = "signTitle">注册</div>
-        <form action="/signUp" method="POST" onsubmit="return userDiscuss()">
+        <form action="/new/signUp" method="POST" onsubmit="return userDiscuss()">
         <% } %>
             <div>
                 <input type="hidden" name="token" value= <%= tokenVal %> />

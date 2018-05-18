@@ -15,10 +15,10 @@ module.exports = function(req, res){
             res.render('../views/sign', {signType: type, uname: userName, tokenVal: tokenValue});
         }
         else{
-            res.redirect('/');
+            res.redirect('/new');
         }
     }
     else{
-        res.redirect('/');
+        res.redirect('/new');
     }
 }

@@ -21,9 +21,9 @@
         <ul>
         <% for(var j = 0; j < shareData.length; j++){ %>
             <li>
-                <p><a class="findTitle" href="/detail/<%= shareData[j]._id %>"><%= shareData[j].title %></a></p>
+                <p><a class="findTitle" href="/new/detail/<%= shareData[j]._id %>"><%= shareData[j].title %></a></p>
                 <p><%= shareData[j].createTime %></p>
-                <p><a id="deleteClick" href="/list/delete?listId=<%= shareData[j]._id %>">删除</a></p>
+                <p><a id="deleteClick" href="/new/list/delete?listId=<%= shareData[j]._id %>">删除</a></p>
                 <input class = "findContent" type="hidden" value=" <%= shareData[j].content %> ">
             </li>
         <% } %>
@@ -32,7 +32,7 @@
     <div id = "content-edit">
         <div id = "edit-container">
             <div class = "signTitle">编辑</div>
-            <form action="/editIn" method="POST">
+            <form action="/new/editIn" method="POST">
                 <div>
                     <input type="hidden" name="token" value= <%= tokenVal %> />
                     <span>标题:</span>
