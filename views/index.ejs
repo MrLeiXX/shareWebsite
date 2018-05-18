@@ -5,10 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Index</title>
-<link href="/css/header.css" rel="stylesheet">
-<link href="/css/footer.css" rel="stylesheet">
-<link href="/css/index.css" rel="stylesheet">
-<link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32">
+<link href="https://static.lhccloud.cn/shareweb/css/header.css" rel="stylesheet">
+<link href="https://static.lhccloud.cn/shareweb/css/footer.css" rel="stylesheet">
+<link href="https://static.lhccloud.cn/shareweb/css/index.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://static.lhccloud.cn/shareweb/img/favicon.png" sizes="32x32">
 </head>
 <body>
 <%- include('./header.ejs') %>
@@ -19,8 +19,8 @@
             <li>
                 <a href="/new/detail/<%= shareData[i]._id %>">
                     <div id = "content-title"><%= shareData[i].title %></div>
-                    <p class="one"><img src="/img/people.png"><%= shareData[i].author %></p>
-                    <p class="two"><img src="/img/time.png"><%= shareData[i].createTime %></p>
+                    <p class="one"><img src="https://static.lhccloud.cn/shareweb/img/people.png"><%= shareData[i].author %></p>
+                    <p class="two"><img src="https://static.lhccloud.cn/shareweb/img/time.png"><%= shareData[i].createTime %></p>
                 </a>
             </li>
         <% } %>
