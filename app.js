@@ -1,6 +1,6 @@
 var express = require("express");
 var mongoose = require('mongoose');
-var DB_URL = 'mongodb://localhost:27017/discuss';
+var DB_URL = 'mongodb://localhost:27017/newdiscuss';
 var bodyParser = require("body-parser");
 var path = require("path");
 var cookieParser = require("cookie-parser");

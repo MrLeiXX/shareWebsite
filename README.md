@@ -1,1 +1,1 @@
-A design of discuss webSite
+A graduation design of discuss webSite --- Safety measures
