@@ -1,1 +1,7 @@
-A graduation design of discuss webSite --- Safety measures
+### 描述：
+  该项目是大学毕业设计做的一个网站应用，将常见的预防Web攻击的理论知识运用到具体的开发中。
+
+### 功能：
+  支持用户注册登陆，支持发表删除文章，支持对当前常见的web攻击如XSS、CSRF、注入等进行监控和过滤，并记录到安全日志数据库中。
+### 技术实现：
+  使用nodejs+express+ejs+mongodb进行开发并上线到云服务器。采用cookie-session认证机制，采用token随机数防止CSRF攻击，引入验证码机制防止弱口令攻击，引入密码加密存储技术，引入HTTPS协议，对常见的web攻击能进行判定警告并记录攻击信息到数据库中。
